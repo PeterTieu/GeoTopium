@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Include the Vue framework-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="countries_difficulty_levels.css">
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/globe_icon.png">
+
+    <!-- Set the title -->
+    <title id="page_title">{{title}}</title>
+</head>
+
+
+<!-- Header Section -->
+
+<header>
+    <!--Navigation bar-->
+    <div id="nav" class="nav">
+        <!--Logo image linking to Home Page-->
+        <a href="../Home/home.html"><img id="logo" src="../Assets/GeoTopium_logo.PNG"></img></a>
+
+        <!-- Anchor Tags to link to other pages -->
+        <a id="nav" href="../Home/home.html">{{home}}</a>
+        <a id="nav" href="../Flags Difficulty Levels/flags_difficulty_levels.html">{{flags}}</a>
+        <a id="nav" href="../Countries Difficulty Levels/countries_difficulty_levels.html"
+            style="color: yellow;">{{countries}}</a>
+        <a>{{search}}</a>
+        <a id="nav" href="../Contacts/contact.html">{{contact}}</a>
+
+        <!--Drop-down menu icon - visible on smaller screen sizes-->
+        <a id="nav" class="icon" href="javascript:void(0);" onclick="resizeNav()"><img class="icon"
+                src="../Assets/three_line_icon.png"></img></a>
+    </div>
+
+</header>
+
+
+<!-- Body Section -->
+<!-- Containers within: Page Banner, Difficulty Levels, Footer -->
+
+<body>
+
+    <!-- Page Banner Container -->
+    <div id="page_banner_container">
+        <p>
+            {{heading}}
+        </p>
+    </div>
+
+    <!-- Difficulty Levels Container -->
+    <div id="difficulty_levels_container">
+
+        <!-- Difficulty Level Component -->
+        <difficulty-level-component id="difficulty_level_component" v-for="difficulty_level in difficulty_levels"
+            v-bind:difficulty_level="difficulty_level.level">
+        </difficulty-level-component>
+
+    </div>
+
+    <!-- Footer Component -->
+    <footer>
+        <div class="footer_component">
+            <h3 id="footer_text">{{footerText}}</h3>
+        </div>
+    </footer>
+
+</body>
+
+
+<!-- Link External JavaScript -->
+<script src="countries_difficulty_levels.js"></script>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Include the Vue framework-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="contact.css">
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/globe_icon.png">
+
+    <!-- Set the title -->
+    <title id="page_title">{{title}}</title>
+</head>
+
+
+<!-- Header Section -->
+
+<header>
+    <!--Navigation bar-->
+    <div id="nav" class="nav">
+        <!--Logo image linking to Home Page-->
+        <a href="../Home/home.html"><img id="logo" src="../Assets/GeoTopium_logo.PNG"></img></a>
+
+        <!-- Anchor Tags to link to other pages -->
+        <a id="nav" href="../Home/home.html">{{home}}</a>
+        <a id="nav" href="../Flags Difficulty Levels/flags_difficulty_levels.html">{{flags}}</a>
+        <a id="nav" href="../Countries Difficulty Levels/countries_difficulty_levels.html">{{countries}}</a>
+        <a>{{search}}</a>
+        <a id="nav" href="../Contacts/contact.html" style="color: yellow;">{{contact}}</a>
+
+        <!--Drop-down menu icon - visible on smaller screen sizes-->
+        <a id="nav" class="icon" href="javascript:void(0);" onclick="resizeNav()"><img class="icon"
+                src="../Assets/three_line_icon.png"></img></a>
+    </div>
+
+</header>
+
+
+<!-- Body Section -->
+<!-- Containers within: Page Banner, Contact -->
+
+<body>
+
+    <!-- Page Banner -->
+    <div id="page_banner_container">
+        <p>
+            {{heading}}
+        </p>
+    </div>
+
+    <!-- Contact Container -->
+    <div id="contact_container">
+        <div id="send_a_message_heading">
+            {{sendAMessageHeading}}
+        </div>
+
+        <br>
+
+        <!-- Name (Input) -->
+        <div class="sub_heading">
+            <label for="name_input">{{nameHeading}}<span style="color:red">*</span></label>
+            <input id="name_input" class="single_line_input" v-model="name" placeholder="Enter your name">
+        </div>
+
+        <!-- Email (Input) -->
+        <div class="sub_heading">
+            <label for="email_input">{{emailHeading}}<span style="color:red">*</span></label>
+            <input id="email_input" class="single_line_input" v-model="name" placeholder="Enter your email">
+        </div>
+
+        <!-- Enquiry Type (drop-down menu) -->
+        <div class="sub_heading">
+            <label for="enquiry_type">{{enquiryType}}</label>
+            <select class="enquiry_type" id="enquiry_type">
+                <option value="not_specified">{{notSpecified}}</option>
+                <optgroup label="Geography">
+                    <option value="countries">{{countries}}</option>
+                    <option value="flags_challenge">{{flagsChallenge}}</option>
+                    <option value="countries_challenge">{{countriesChallenge}}</option>
+                </optgroup>
+                <optgroup label="Others">
+                    <option value="opportunities">{{opportunities}}</option>
+                    <option value="get_in_touch">{{getInTouch}}</option>
+                    <option value="feedback">{{feedback}}</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- Message (Text Area) -->
+        <div class="sub_heading">
+            <label for="message_text_area">{{messageHeading}}<span style="color:red">*</span></label>
+            <textarea id="message_text_area" class="multiple_line_input" v-model="message"
+                placeholder="Enter your message"></textarea>
+        </div>
+
+        <!-- Buttons Container -->
+        <div id="buttons_container">
+            <input id="reset_button" type="reset" value="Reset">
+            <input id="submit_button" type="submit" value="Send">
+        </div>
+
+        <!-- Location Container -->
+        <div class="sub_heading">
+            <label for="message_text_area">{{findUsHeading}}</label>
+
+            <!-- Geolocation API -->
+            <iframe id="map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=144.9490642534511%2C-37.82102899265098%2C144.97459888327288%2C-37.80755246564249&amp;layer=mapnik">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Footer Component -->
+    <footer>
+        <div class="footer_component">
+            <h3 id="footer_text">{{footerText}}</h3>
+        </div>
+    </footer>
+
+</body>
+
+
+<!-- Link External JavaScript -->
+<script src="contact.js"></script>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Include the Vue framework-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="results.css">
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/globe_icon.png">
+
+    <!-- Set the title -->
+    <title id="page_title">{{title}}</title>
+</head>
+
+
+<!-- Header Section -->
+
+<header>
+    <!--Navigation bar-->
+    <div id="nav" class="nav">
+        <!--Logo image linking to Home Page-->
+        <a href="../Home/home.html"><img id="logo" src="../Assets/GeoTopium_logo.PNG"></img></a>
+
+        <!-- Anchor Tags to link to other pages -->
+        <a id="nav" href="../Home/home.html">{{home}}</a>
+        <a id="nav" href="../Flags Difficulty Levels/flags_difficulty_levels.html" style="color: yellow;">{{flags}}</a>
+        <a id="nav" href="../Countries Difficulty Levels/countries_difficulty_levels.html">{{countries}}</a>
+        <a>{{search}}</a>
+        <a id="nav" href="../Contacts/contact.html">{{contact}}</a>
+
+        <!--Drop-down menu icon - visible on smaller screen sizes-->
+        <a id="nav" class="icon" href="javascript:void(0);" onclick="resizeNav()"><img class="icon"
+                src="../Assets/three_line_icon.png"></img></a>
+    </div>
+
+</header>
+
+
+<!-- Body Section -->
+<!-- Components within: Side Panel, Question, Footer -->
+
+<body>
+
+    <!-- Page Banner -->
+    <div id="page_banner_container">
+        <p>
+            {{heading}}
+        </p>
+    </div>
+
+    <div id="results_container">
+
+        <!--Score Container-->
+        <div id="score_container" class="sub_container">
+            <h1 id="score_subheading" class="subheading">{{scoreSubheading}}</h1>
+            <h1 id="score">{{scoreCounter}}</h1>
+        </div>
+
+        <!--Attemps Remaining Container-->
+        <div id="attempts_remaining_container" class="sub_container">
+            <h1 id="attempts_remaining_subheading" class="subheading">{{attemptsRemainingSubheading}}</h1>
+            <div id=" heart_icons_container">
+
+                <img id=" heart_icon_left" class="heart_icon" src="../Assets/heart_red.png" alt="Red Heart"
+                    v-if="attemptsRemaining>=1">
+                <img v-else id="heart_icon_left" class="heart_icon" src="../Assets/heart_empty.png" alt="Empty Heart">
+
+                <img id="heart_icon_middle" class="heart_icon" src="../Assets/heart_red.png" alt="Red Heart"
+                    v-if="attemptsRemaining>=2">
+                <img v-else id="heart_icon_left" class="heart_icon" src="../Assets/heart_empty.png" alt="Empty Heart">
+
+                <img id="heart_icon_right" class="heart_icon" src="../Assets/heart_red.png" alt="Red Heart"
+                    v-if="attemptsRemaining>=3">
+                <img v-else id="heart_icon_left" class="heart_icon" src="../Assets/heart_empty.png" alt="Empty Heart">
+
+            </div>
+        </div>
+
+        <!--Question Counter Container-->
+        <div id="question_answered_container" class="sub_container">
+            <h1 id="questions_answered_subheading" class="subheading">{{questionsAnsweredSubheading}}</h1>
+            <h1 id="questions_answered"> {{questionCounter}}</h1>
+        </div>
+
+        <!--Difficulty Level Container-->
+        <div id="difficulty_level_container" class="sub_container">
+            <h1 id="difficulty_level_subheading" class="subheading">{{difficultySubheading}}</h1>
+            <h1 id="difficulty_level"> {{difficultyLevel}}</h1>
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer Component -->
+    <footer>
+        <div class="footer_component">
+            <h3 id="footer_text">{{footerText}}</h3>
+        </div>
+    </footer>
+
+</body>
+
+
+<!-- Link External JavaScript -->
+<script src="results.js"></script>
+
+</html>

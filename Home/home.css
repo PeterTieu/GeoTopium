@@ -1,0 +1,208 @@
+/* ============================== Tags ==================================================*/
+body {
+    font-family: sans-serif;
+    background-color: #ADD4E0;
+    margin: 2px;
+}
+
+p, div, button, h1, h2, h3 {
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    border-color: #316C85;
+}
+p {
+    margin: 0%;
+}
+
+footer {
+    clear:both;
+    background-color: #318085;
+    position: relative;
+    height: 50px;
+    box-shadow: 0 50vh 0 50vh #318085;
+}
+
+/*Limit the height of menu icon image and scale the width accordingly */
+img.icon {
+    max-height: 30px;
+    width: auto;
+}
+
+
+
+/*============================== Navigation Bar =========================================*/
+/* Navigation Bar */
+.nav {
+    background-color: #316C85;
+    border-style: solid;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+    font-size: 30px;
+    min-width: 15%;
+    float: left;
+    background-color: #316C85;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Change the color of links upon hover */
+.nav a:hover {
+    background-color: rgb(106, 155, 228);
+    color: #ffed62;
+}
+/* Fix the elements in this class to the top of the page */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/*Hide Start Menu Icon by default*/
+.nav a.icon {
+    display: none;
+}
+
+/*Change background of menu icon upon hover */
+.nav a.icon:hover {
+    background-color: black;
+}
+
+
+
+/*============================== Elements ===============================================*/
+/* Logo */
+#logo {
+    margin-top: 3%;
+    width: 180px;
+}
+
+
+
+/*============================== Components and Containers ==============================*/
+
+/* >>>>>>>>>>>>>>>>> Side Panel (Component) <<<<<<<<<<<<<<<<< */
+
+/* Containers within:
+    -> Page Banner
+    -> Countries
+*/
+
+
+/* Page Banner Container */
+#page_banner_container {
+    background-color: #4FC9B3;
+    height: 14vh;
+    border: 3px solid green;
+    position: relative;
+    background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+}
+
+#page_banner_container p {
+    color: #540A6D;
+    font-size: 4.5vh;
+    font-weight: 600;
+    padding: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Countries Container */
+#countries_container {
+    background-color: #B3EDFA;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* Countries Component */
+#country_component {
+  padding: 20px;
+  font-size: 0.7em;
+}
+
+
+/* >>>>>>>>>>>>>>>>> Footer (Component) <<<<<<<<<<<<<<<<< */
+
+.footer_component h3{
+    position: relative;
+}
+
+/* Footer Text */
+#footer_text {
+  position: static;
+  left: 50%;
+  color: white;
+}
+
+
+
+/*============================== Responsiveness =========================================*/
+
+/* When screen size is 620px or smaller*/
+@media screen and (max-width: 620px) {
+
+    /* >>>>>>>>>>>>>>>>> General Layout <<<<<<<<<<<<<<<<< */
+
+    /* Reduce the content down to one longer scrolling column, with no dividing border */
+    .column {
+        float: none;
+        width: 100%;
+    }
+
+    /* Remove border style */
+    .content {
+        border-style: none;
+    }
+
+
+    /* >>>>>>>>>>>>>>>>> Navigation Bar <<<<<<<<<<<<<<<<< */
+
+    /* Remove the entire navigation bar, except for the first anchor element (i.g. logo) */
+    .nav a:not(:first-child) {
+        display: none;
+    }
+
+    .nav a.icon {
+      float: right;
+      display: block;
+    }
+
+    /* Display menu item links vertically (instead of horizontally) */
+    .nav.responsive {position: relative;}
+    .nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /* Links for the "responsive" class */
+    .nav.responsive a {
+        background-color: #172765;
+        color: white;
+        text-align: left;
+        text-decoration: none;
+        float: none;
+        display: block;
+    }
+
+    /* GeoTopium Logo */
+    .logo {
+        background-color: #17652b;
+    }
+
+}

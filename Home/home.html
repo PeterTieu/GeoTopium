@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head Section -->
+
+<head>
+    <!--Include the Vue framework-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="home.css">
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/globe_icon.png">
+
+    <!-- Set the title -->
+    <title id="page_title">{{title}}</title>
+</head>
+
+
+<!-- Header Section -->
+
+<header>
+    <!--Navigation bar-->
+    <div id="nav" class="nav">
+        <!--Logo image linking to Home Page-->
+        <a href="../Home/home.html"><img id="logo" src="../Assets/GeoTopium_logo.PNG"></img></a>
+
+        <!-- Anchor Tags to link to other pages -->
+        <a href="../Home/home.html" style="color: yellow;">{{home}}</a>
+        <a href="../Flags Difficulty Levels/flags_difficulty_levels.html">{{flags}}</a>
+        <a href="../Countries Difficulty Levels/countries_difficulty_levels.html">{{countries}}</a>
+        <a>{{search}}</a>
+        <a href="../Contacts/contact.html">{{contact}}</a>
+
+        <!--Drop-down menu icon - visible on smaller screen sizes-->
+        <a class="icon" href="javascript:void(0);" onclick="resizeNav()"><img class="icon"
+                src="../Assets/three_line_icon.png"></img></a>
+    </div>
+
+</header>
+
+
+<!-- Body Section -->
+<!-- Components within: Side Panel, Question, Footer -->
+
+<body>
+
+    <!-- Page Banner Container -->
+    <div id="page_banner_container">
+        <p>
+            {{heading}}
+        </p>
+    </div>
+
+    <!-- Countries Container -->
+    <div id="countries_container">
+
+        <!-- Custom Component: Country Component -->
+        <!-- NOTE: The <country-component> tag renders a Flag Image-Country Name pair -->
+        <country-component id="country_component" v-for="country in countries" v-bind:flag_image="country.image_src"
+            v-bind:country_name="country.name" v-bind:title="country.name">
+        </country-component>
+
+    </div>
+
+    <!-- Footer Component -->
+    <footer>
+        <div class="footer_component">
+            <h3 id="footer_text">{{footerText}}</h3>
+        </div>
+    </footer>
+
+</body>
+
+
+<!-- Link External JavaScript -->
+<script src="home.js"></script>
+
+</html>

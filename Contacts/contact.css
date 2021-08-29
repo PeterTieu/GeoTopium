@@ -1,0 +1,262 @@
+/* ============================== Tags ==================================================*/
+body {
+    font-family: sans-serif;
+    background-color: #ADD4E0;
+    margin: 2px;
+}
+
+p, div, button, h1, h2, h3 {
+    color: black;
+    border-radius: 5px;
+    border-color: #316C85;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    margin: 0%;
+}
+
+footer {
+    clear:both;
+    background-color: #318085;
+    position: relative;
+    height: 50px;
+    box-shadow: 0 50vh 0 50vh #318085;
+}
+
+/*Limit the height of menu icon image and scale the width accordingly */
+img.icon {
+    max-height: 30px;
+    width: auto;
+}
+
+
+
+/*============================== General Layout =========================================*/
+.column {
+    float: left;
+}
+
+
+
+/*============================== Navigation Bar =========================================*/
+/* Navigation Bar */
+.nav {
+    background-color: #316C85;
+    border-style: solid;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+    font-size: 30px;
+    min-width: 15%;
+    float: left;
+    background-color: #316C85;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Change the color of links upon hover */
+.nav a:hover {
+    background-color: rgb(106, 155, 228);
+    color: #ffed62;
+}
+
+/* Fix the elements in this class to the top of the page */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/*Hide Start Menu Icon by default*/
+.nav a.icon {
+    display: none;
+}
+
+/*Change background of menu icon upon hover */
+.nav a.icon:hover {
+    background-color: black;
+}
+
+
+/*============================== Elements ===============================================*/
+/* Logo */
+#logo {
+    margin-top: 3%;
+    width: 180px;
+}
+
+
+/*============================== Components and Containers ==============================*/
+
+/* Containers within:
+    -> Page Banner
+    -> Contact
+*/
+
+/* Page Banner Container */
+#page_banner_container {
+    background-color: #4FC9B3;
+    height: 14vh;
+    border: 3px solid green;
+    position: relative;
+    background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+}
+
+#page_banner_container p {
+    text-align: center;
+    color: #540A6D;
+    font-size: 4vh;
+    font-weight: 600;
+    padding: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Contact Container */
+#contact_container {
+    background-color: #B3EDFA;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* "Send a Message" Heading */
+#send_a_message_heading {
+    color: #F88E12;
+    margin: auto;
+    padding: 10px;
+    font-size: 2.4em;
+    width: 70%;
+}
+
+/* Sub Headings for each of the input fields */
+.sub_heading {
+    color: #666666;
+    margin: auto;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 70%;
+}
+
+/* Single line inputs */
+.single_line_input {
+    display: block;
+    width: 100%;
+    height: 30px;
+    font-size: 0.7em;
+    margin-bottom: 4%;
+}
+
+/* Text area input */
+.multiple_line_input {
+    display: block;
+    width: 100%;
+    height: 12vw;
+    font-size: 1em;
+}
+
+/* Enquriry Type (drop-down box) */
+.enquiry_type {
+    width: 60%;
+    height: 32px;
+    font-size: 0.6em;
+    margin-bottom: 4%;
+}
+
+#buttons_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 86%;
+}
+
+#reset_button {
+    margin: 1%;
+}
+
+#submit_button {
+    margin: 1%;
+}
+
+#map {
+    display: block;
+    height: 50vh;
+    width: 100%;
+}
+
+
+/* >>>>>>>>>>>>>>>>> Footer (Component) <<<<<<<<<<<<<<<<< */
+
+.footer_component h3{
+    position: relative;
+    margin-top: 0;
+}
+
+/* Footer Text */
+#footer_text {
+  position: static;
+  left: 50%;
+  color: white;
+  padding-top: 2%;
+}
+
+
+
+/*============================== Responsiveness =========================================*/
+
+/* When screen size is 620px or smaller*/
+@media screen and (max-width: 620px) {
+
+    /* >>>>>>>>>>>>>>>>> Navigation Bar <<<<<<<<<<<<<<<<< */
+
+    /* Remove the entire navigation bar, except for the first anchor element (i.g. logo) */
+    .nav a:not(:first-child) {
+        display: none;
+    }
+
+    .nav a.icon {
+      float: right;
+      display: block;
+    }
+
+    /* Display menu item links vertically (instead of horizontally) */
+    .nav.responsive {position: relative;}
+    .nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /* Links for the "responsive" class */
+    .nav.responsive a {
+        background-color: #172765;
+        color: white;
+        text-align: left;
+        text-decoration: none;
+        float: none;
+        display: block;
+    }
+
+    /* GeoTopium Logo */
+    .logo {
+        background-color: #17652b;
+    }
+
+}

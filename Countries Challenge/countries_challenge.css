@@ -1,0 +1,513 @@
+/* ============================== Tags ==================================================*/
+body {
+    font-family: sans-serif;
+    background-color: #ADD4E0;
+    margin: 2px;
+}
+
+p, div, button, h1, h2, h3 {
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    border-color: #316C85;
+}
+p {
+    margin: 0%;
+}
+
+footer {
+    clear:both;
+    background-color: #318085;
+    position: relative;
+    height: 50px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 15%;
+}
+
+/*Limit the height of menu icon image and scale the width accordingly */
+img.icon {
+    max-height: 30px;
+    width: auto;
+}
+
+
+
+/*============================== General Layout =========================================*/
+.column {
+    float: left;
+}
+
+
+
+/*============================== Navigation Bar =========================================*/
+/* Navigation Bar */
+.nav {
+    background-color: #316C85;
+    border-style: solid;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+    font-size: 30px;
+    min-width: 15%;
+    float: left;
+    background-color: #316C85;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Change the color of links upon hover */
+.nav a:hover {
+    background-color: rgb(106, 155, 228);
+    color: #ffed62;
+}
+/* Fix the elements in this class to the top of the page */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/*Hide Start Menu Icon by default*/
+.nav a.icon {
+    display: none;
+}
+
+/*Change background of menu icon upon hover */
+.nav a.icon:hover {
+    background-color: black;
+}
+
+
+/*============================== Elements ===============================================*/
+/* Logo */
+#logo {
+    margin-top: 3%;
+    width: 180px;
+}
+
+#difficulty_level {
+    position: absolute;
+    color: black;
+    margin-left: 1%;
+    margin-top: 1%;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+
+#difficulty_level_text {
+    position: absolute;
+    color: red;
+    margin-left: 1%;
+    margin-top: 1%;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+
+/*============================== Component and Container ================================*/
+
+/* >>>>>>>>>>>>>>>>> Side Panel (Component) <<<<<<<<<<<<<<<<< */
+
+/* Containers within:
+    -> Question Number
+    -> Timer
+    -> Score
+*/
+
+.side_panel_component {
+    width: 30%;
+    padding: 1%;
+    overflow: auto;
+    max-height: 10%;
+}
+
+/* Side Panel Compnonent's Subheadings */
+.side_panel_subheading {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 4em;
+    color: rgb(21, 32, 112);
+}
+
+
+/* ------ Question Number (Container) ------ */
+
+.question_number_container {
+    background-color: #49B8BF;
+    height: 120px;
+    font-size: 1.4em;
+    padding: 3%;
+    border-style: solid;
+}
+
+/* Question Subheading */
+#question_subheading {
+    margin-top: 2%;
+}
+
+/* Questio Number */
+#question_number {
+    color: rgb(39, 73, 211);
+    font-size: 2.5em;
+}
+
+
+/* ------ Timer (Container) ------ */
+
+.timer_container {
+    background-color: #75CFF5;
+    height: 200px;
+    padding: 3%;
+    border-style: solid;
+}
+
+/* Time Reamaining Number */
+#time_remaining {
+    font-size: 4em;
+    color: red;
+    margin-top: 0%;
+    display: inline;
+}
+
+/* "S" text adjacent to the 'Time Remaining Number' */
+#seconds_text {
+    font-size: 2.5em;
+    color: rgb(100, 14, 40);
+    display: inline;
+}
+
+
+/* ------ Score (Container) ------ */
+
+.score_container {
+    background-color: #BDA6FF;
+    height: 320px;
+    max-height: 10%;
+    padding: 3%;
+    border-style: solid;
+}
+
+/* Score Number */
+#score {
+    font-size: 4em;
+    color: rgb(100, 14, 40);
+}
+
+/*================ Possible Answers - Hovering Effects ================*/
+#possible_answer_1:hover {
+	transform: translateY(-0.4em);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+#possible_answer_2:hover {
+	transform: translateY(-0.4em);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+#possible_answer_3:hover {
+	transform: translateY(-0.4em);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+#possible_answer_4:hover {
+	transform: translateY(-0.4em);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+
+/* >>>>>>>>>>>>>>>>> Question (Component) <<<<<<<<<<<<<<<<< */
+
+/* Containers within:
+    -> Prompt
+    -> Possible Answers
+*/
+
+footer {
+    box-shadow: 0 50vh 0 50vh #318085;
+}
+
+.question_component {
+    width: 65%;
+}
+
+
+
+/* ------ Prompt (Container) ------ */
+
+.prompt_container {
+    background-color: #DAF6F0;
+    height: 250px;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+
+#prompt_flag_image {
+   display: block;
+   margin: 0 auto;
+   padding: 5%;
+   max-height: 100%;
+   height: 62%;
+   width: 30%;
+}
+
+
+/* ------ Possible Answers (Container) ------ */
+
+.possible_answers_container {
+    background-color: #CCF6FF;
+    height: 100%;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+/* Country Name */
+.possible_answers_container div h1 {
+    padding: 3%;
+    margin: 0%;
+    height: 16vh;
+    width: 25vw;
+}
+
+#possible_answer_1 {
+    font-size: 2em;
+     color: #540A6D;
+     margin: 2%;
+     /* Fix the size of the div so it does not get affected by its contents */
+     display: inline-block;
+}
+
+#possible_answer_2 {
+     font-size: 2em;
+     color: #540A6D;
+     margin: 2%;
+     /* Fix the size of the div so it does not get affected by its contents */
+     display: inline-block;
+ }
+
+ #possible_answer_3 {
+     font-size: 2em;
+     color: #540A6D;
+     margin: 2%;
+     /* Fix the size of the div so it does not get affected by its contents */
+      display: inline-block;
+  }
+
+ #possible_answer_4 {
+     font-size: 2em;
+     color: #540A6D;
+     margin: 2%;
+     /* Fix the size of the div so it does not get affected by its contents */
+     display: inline-block;
+ }
+
+
+
+/* >>>>>>>>>>>>>>>>> Footer (Component) <<<<<<<<<<<<<<<<< */
+
+.footer_component h3{
+    position: relative;
+}
+
+/* Footer Text */
+#footer_text {
+  position: static;
+  /* top: 0%; */
+  left: 50%;
+}
+
+
+
+
+/*============================== Responsiveness =========================================*/
+
+/* When screen size is 620px or smaller*/
+@media screen and (max-width: 1000px) {
+
+    #score {
+        margin: 0;
+        font-size: 5em
+    }
+
+    .prompt_container {
+         max-height: 150px;
+    }
+
+    /* .possible_answers_container div h1 {
+        width: 38%;
+        padding: 3%;
+    } */
+
+    /* Country Name */
+    .possible_answers_container div h1 {
+        padding: 3%;
+        margin: 0%;
+        height: 12vh;
+    }
+
+   #possible_answer_1 {
+       display: block;
+       margin: 0 auto;
+       max-height: 100%;
+   }
+   #possible_answer_2 {
+       display: block;
+       margin: 0 auto;
+       max-height: 100%;
+   }
+   #possible_answer_3 {
+       display: block;
+       margin: 0 auto;
+       max-height: 100%;
+   }
+   #possible_answer_4 {
+       display: block;
+       margin: 0 auto;
+       max-height: 100%;
+   }
+
+   .prompt_container {
+       font-size: 0.6em;
+   }
+}
+
+
+
+/* When screen size is 620px or smaller*/
+@media screen and (max-width: 620px) {
+
+    /* >>>>>>>>>>>>>>>>> General Layout <<<<<<<<<<<<<<<<< */
+
+    /* Reduce the content down to one longer scrolling column, with no dividing border */
+    .column {
+        float: none;
+        width: 100%;
+    }
+
+    /* >>>>>>>>>>>>>>>>> Navigation Bar <<<<<<<<<<<<<<<<< */
+
+    /* Remove the entire navigation bar, except for the first anchor element (i.g. logo) */
+    .nav a:not(:first-child) {
+        display: none;
+    }
+
+    .nav a.icon {
+      float: right;
+      display: block;
+    }
+
+    /* Display menu item links vertically (instead of horizontally) */
+    .nav.responsive {position: relative;}
+    .nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /* Links for the "responsive" class */
+    .nav.responsive a {
+        background-color: #172765;
+        color: white;
+        text-align: left;
+        text-decoration: none;
+        float: none;
+        display: block;
+    }
+
+    /* GeoTopium Logo */
+    .logo {
+        background-color: #17652b;
+    }
+
+
+    /* >>>>>>>>>>>>>>>>> Containers <<<<<<<<<<<<<<<<< */
+    /*  */
+    .question_number_container {
+        width: 25%;
+        max-width: 30%;
+        max-height: 50px;
+        float:left;
+        margin:0%;
+        font-size:0.7em;
+    }
+
+    .timer_container {
+        width: 25.5%;
+        max-width: 30%;
+        max-height: 50px;
+        float: left;
+        margin:0%;
+        font-size:0.3em;
+    }
+
+    .score_container {
+        width: 26%;
+        max-width: 30%;
+        max-height: 50px;
+        float:left;
+        margin:0%;
+        font-size:0.25em;
+    }
+
+    #score {
+        margin: 0;
+        font-size: 5em
+    }
+
+    .prompt_container {
+        max-height: 150px;
+    }
+
+    /* Country Name */
+    .possible_answers_container div h1 {
+        padding: 3%;
+        margin: 0%;
+        height: 10vh;
+        width: 100vw;
+    }
+
+   #possible_answer_1 {
+       display: block;
+       margin: 0 auto;
+       padding-top: 8%;
+       max-height: 100%;
+       font-size: 1.6em;
+   }
+   #possible_answer_2 {
+       display: block;
+       margin: 0 auto;
+       max-height: 100%;
+       font-size: 1.6em;
+   }
+   #possible_answer_3 {
+       display: block;
+       margin: 0 auto;
+       max-height: 100%;
+       font-size: 1.6em;
+   }
+   #possible_answer_4 {
+       display: block;
+       margin: 0 auto;
+       max-height: 100%;
+       font-size: 1.6em;
+   }
+
+   .prompt_container {
+       font-size: 0.6em;
+   }
+}

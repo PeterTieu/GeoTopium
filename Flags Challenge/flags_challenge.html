@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Include the Vue framework-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!-- Link to CSS stylesheet -->
+  <link rel="stylesheet" type="text/css" href="flags_challenge.css">
+
+  <!-- Set responsiveness to screen size -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Add image icon to the title -->
+  <link rel="shortcut icon" type="image/x-icon" href="../Assets/globe_icon.png">
+
+  <!-- Set the title -->
+  <title id="page_title">{{title}}</title>
+</head>
+
+
+<!-- Header Section -->
+
+<header>
+  <!--Navigation bar-->
+  <div id="nav" class="nav">
+    <!--Logo image linking to Home Page-->
+    <a href="../Home/home.html"><img id="logo" src="../Assets/GeoTopium_logo.PNG"></img></a>
+
+    <!-- Anchor Tags to link to other pages -->
+    <a id="nav" href="../Home/home.html">{{home}}</a>
+    <a id="nav" href="../Flags Difficulty Levels/flags_difficulty_levels.html" style="color: yellow;">{{flags}}</a>
+    <a id="nav" href="../Countries Difficulty Levels/countries_difficulty_levels.html">{{countries}}</a>
+    <a>{{search}}</a>
+    <a id="nav" href="../Contacts/contact.html">{{contact}}</a>
+
+    <!--Drop-down menu icon - visible on smaller screen sizes-->
+    <a id="nav" class="icon" href="javascript:void(0);" onclick="resizeNav()"><img class="icon"
+        src="../Assets/three_line_icon.png"></img></a>
+  </div>
+
+</header>
+
+
+<!-- Body Section -->
+<!-- Components within: Side Panel, Question, Footer -->
+
+<body>
+
+  <!--Side Panel Component -->
+  <!-- Containers within: Question Number Container, Timer Container, Score Container -->
+  <div id="side_panel" class="column side_panel_component">
+
+    <!--Question Number Container-->
+    <div class="question_number_container">
+      <h3 id="question_subheading">{{questionText}}<span id="question_number"></span>{{of20Text}}</h3>
+    </div>
+
+    <!--Timer Container-->
+    <div class="timer_container">
+      <h1 class="side_panel_subheading">{{timerText}}</h1>
+      <h1 id="time_remaining"></h1>
+      <h1 id="seconds_text">{{secondsText}}</h1>
+    </div>
+
+    <!--Score Container-->
+    <div class="score_container">
+      <h1 class="side_panel_subheading">{{scoreSubheading}}</h1>
+      <h1 id="score"></h1>
+      <img id="heart_icon_left" src="../Assets/heart_red.png" alt="Red Heart">
+      <img id="heart_icon_middle" src="../Assets/heart_red.png" alt="Red Heart">
+      <img id="heart_icon_right" src="../Assets/heart_red.png" alt="Red Heart">
+    </div>
+
+  </div>
+
+
+  <!-- Question Component-->
+  <!-- Containers within: Prompt Container, Possible Answers Container -->
+  <div id="questions" class="column question_component">
+
+    <!-- Prompt Container -->
+    <div class="prompt_container">
+      <div id="difficulty_level">{{difficultyText}}
+        <p id="difficulty_level_text" v-if="difficultyLevel === 'Beginner'">{{beginnerText}}</p>
+        <p id="difficulty_level_text" v-if="difficultyLevel === 'Novice'"> {{noviceText}}</p>
+        <p id="difficulty_level_text" v-if="difficultyLevel === 'Medium'"> {{mediumText}}</p>
+        <p id="difficulty_level_text" v-if="difficultyLevel === 'Advanced'"> {{advancedText}}</p>
+        <p id="difficulty_level_text" v-if="difficultyLevel === 'Legendary'"> {{legendaryText}}</p>
+      </div>
+      <h1 id="prompt_country_name"></h1>
+    </div>
+
+    <!-- Possible Answers Container -->
+    <div class="possible_answers_container">
+      <!-- Possible Answers #1 and #2 -->
+      <div>
+        <img id="possible_answer_1"></img>
+        <img id="possible_answer_2"></img>
+      </div>
+
+      <!-- Possible Answers #3 and #4 -->
+      <div>
+        <img id="possible_answer_3"></img>
+        <img id="possible_answer_4"></img>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer Component -->
+  <footer>
+    <div class="footer_component">
+      <h3 id="footer_text">{{footerText}}</h3>
+    </div>
+  </footer>
+
+</body>
+
+
+<!-- Link External JavaScript -->
+<script src="flags_challenge.js"></script>
+
+</html>
