@@ -457,7 +457,8 @@ x.addListener(myFunction) // Attach listener function on state changes
 /* >>>>>>>>>>>>>>>>> Declare and assign operations variables <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 const MAX_TIME_REMAINING = 15;          // Countdown time per question (in seconds)
-const TOTAL_NUM_QUESTIONS = 5;         // Total number of questions in the Challenge
+const TOTAL_NUM_QUESTIONS = 5;          // Total number of questions in the Challenge
+var challengeType = "flags_challenge";  // Challenge Type identifier
 var isPossibleAnswerSelected = false;   // Flag to signal whether a Possible Answer has been selected
 var randomPromptCountryName;            // Country Name of the Prompt
 var questionCounter = 1;                // Question Number
@@ -720,7 +721,7 @@ function startNewQuestion() {
 // Load Results page (if all questions are answered, or if all Hearts Remaining reach zero)
 function loadResultsPage() {
     if (attemptsRemaining <= 0 || questionCounter == TOTAL_NUM_QUESTIONS) {
-        //Send data of the Hearts Remaining and the Score
+        localStorage.setItem("challengeType", challengeType);
         localStorage.setItem("scoreCounter", scoreCounter);
         localStorage.setItem("attemptsRemaining", attemptsRemaining);
         localStorage.setItem("questionCounter", questionCounter);

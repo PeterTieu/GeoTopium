@@ -518,13 +518,14 @@ switch (difficultyLevel) {
 
 /* >>>>>>>>>>>>>>>>> Declare and assign operations variables <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
-const MAX_TIME_REMAINING = 15;          // Countdown time per question (in seconds)
-const TOTAL_NUM_QUESTIONS = 5;         // Total number of questions in the Challenge
-var isPossibleAnswerSelected = false;   // Flag to signal whether a Possible Answer has been selected
-var randomPromptFlagImage;              // Directory for the src of the Flag Image Prompt
-var questionCounter = 1;                // Question Number
-var scoreCounter = 0;                   //Score
-var attemptsRemaining = 3;              // Number of attemps remaining
+const MAX_TIME_REMAINING = 15;              // Countdown time per question (in seconds)
+const TOTAL_NUM_QUESTIONS = 5;              // Total number of questions in the Challenge
+var challengeType = "countries_challenge";  // Challenge Type identifier
+var isPossibleAnswerSelected = false;       // Flag to signal whether a Possible Answer is selected
+var randomPromptFlagImage;                  // Directory for the src of the Flag Image Prompt
+var questionCounter = 1;                    // Question Number
+var scoreCounter = 0;                       //Score
+var attemptsRemaining = 3;                  // Number of attemps remaining
 
 
 /* >>>>>>>>>>>>>>>>> Set up the Prompt <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
@@ -780,7 +781,7 @@ function startNewQuestion() {
 // Load Results page (if all questions are answered, or if all Hearts Remaining reach zero)
 function loadResultsPage() {
     if (attemptsRemaining <= 0 || questionCounter == TOTAL_NUM_QUESTIONS) {
-        //Send data of the Hearts Remaining and the Score
+        localStorage.setItem("challengeType", challengeType);
         localStorage.setItem("scoreCounter", scoreCounter);
         localStorage.setItem("attemptsRemaining", attemptsRemaining);
         localStorage.setItem("questionCounter", questionCounter);

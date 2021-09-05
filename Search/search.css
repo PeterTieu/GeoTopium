@@ -5,8 +5,11 @@ body {
     margin: 2px;
 }
 
-p, div, button, h1, h2, h3 {
+p, button, h1, h2, h3 {
     color: black;
+    border-radius: 5px;
+    border-color: #316C85;
+    text-align: center;
     border-radius: 5px;
     border-color: #316C85;
 }
@@ -61,6 +64,7 @@ img.icon {
     border-style: solid;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 10px 5px 5px rgb(50, 207, 213);
 }
 
 /* Style the links inside the navigation bar */
@@ -120,7 +124,7 @@ img.icon {
     height: 14vh;
     border: 3px solid green;
     position: relative;
-    background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+    background: linear-gradient(-90deg, #3bf29d, #edd471);
 }
 
 #page_banner_container p {
@@ -152,7 +156,7 @@ img.icon {
 
 #pre_search_message {
     font-size: 2.2em;
-    color: #124d21;
+    color: #f8611b;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

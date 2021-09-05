@@ -1,10 +1,23 @@
 /* >>>>>>>>>>>>>>>>> Obtain Data from Flags Challenge Difficulty Page <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+var challengeType = localStorage.getItem("challengeType");
 var scoreCounter = localStorage.getItem("scoreCounter");
 var attemptsRemaining = localStorage.getItem("attemptsRemaining");
 var questionCounter = localStorage.getItem("questionCounter");
 var difficultyLevel = localStorage.getItem("difficultyLevel");
 
+// Get the DOM element for the Flags and Coutnries Nav Items
+var flagsChallengeNavItem = document.getElementById('flags_challenge_nav_item');
+var countriesChallengeNavItem = document.getElementById('countries_challenge_nav_item');
 
+// Set the colors of the Flags and Countries Nav Items to reflect the Challenge undertaken
+if (challengeType === "flags_challenge") {
+    flagsChallengeNavItem.style.color = "yellow"
+    countriesChallengeNavItem.style.color = "white"
+}
+else if (challengeType === "countries_challenge") {
+    countriesChallengeNavItem.style.color = "yellow"
+    flagsChallengeNavItem.style.color = "white"
+}
 
 // ================== Page Title ===================================
 

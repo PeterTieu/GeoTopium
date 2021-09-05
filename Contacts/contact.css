@@ -5,7 +5,7 @@ body {
     margin: 2px;
 }
 
-p, div, button, h1, h2, h3 {
+p, button, h1, h2, h3 {
     color: black;
     border-radius: 5px;
     border-color: #316C85;
@@ -61,6 +61,7 @@ img.icon {
     border-style: solid;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 10px 5px 5px rgb(50, 207, 213);
 }
 
 /* Style the links inside the navigation bar */
@@ -120,7 +121,7 @@ img.icon {
     height: 14vh;
     border: 3px solid green;
     position: relative;
-    background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+    background: linear-gradient(-90deg, #eb8e79, #d2e483);
 }
 
 #page_banner_container p {
@@ -204,12 +205,53 @@ img.icon {
     width: 86%;
 }
 
+
+
 #reset_button {
     margin: 1%;
+    font-size: 1.5em;
+    color: white;
+    margin: 1%;
+    height: 4vh;
+    width: 6vw;
+    background: #dd7c7c;
+    border-radius: 8px;
+}
+
+#reset_button:hover {
+    box-shadow: 0 0.9em 2em -0.4em #d18b0a;
+	transform: translateY(-0.1em);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: #c71906;
 }
 
 #submit_button {
+    font-size: 1.5em;
+    color: white;
     margin: 1%;
+    height: 4vh;
+    width: 10vw;
+    background: #77c706;
+    border-radius: 8px;
+}
+
+#submit_button:hover {
+    box-shadow: 0 0.9em 2em -0.4em #1541d5;
+	transform: translateY(-0.1em);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: #77c706;
+}
+
+
+/* Hovering Effects */
+#difficulty_level_component:nth-child(3) button:hover {
+	box-shadow: 0 0.9em 0.9em -0.4em #f1ff5c;
+	transform: translateY(-0.2em);
+	cursor: pointer;
+	transition: all 0.6s ease;
+	background: #2aa728;
 }
 
 #map {
