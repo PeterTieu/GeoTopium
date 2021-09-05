@@ -55,10 +55,7 @@ Vue.component("difficulty-level-component", {
   // Define template
   template:
     "<div>" +
-      "<button v-on:click=\"load_flags_challenge_page(difficulty_level)\" style=\"width:50vw; height:8vh;\">" +
-      "<p>" +
-        "{{difficulty_level}}" +
-      "</p>" +
+      "<button v-on:click=\"load_flags_challenge_page(difficulty_level)\" style=\"width:50vw; height:8vh;\">" + "<slot></slot>" +
       "</button>" +
     "</div>",
 
@@ -74,12 +71,12 @@ Vue.component("difficulty-level-component", {
       localStorage.setItem("difficulty_level", difficulty_level);
 
       // Delay 420ms before opening Flags Challenge Page
-      var x = setInterval(function() {
+      var x = setInterval(function () {
         // Open the Flags Challenge page
         window.location.href = "../Flags Challenge/flags_challenge.html";
 
       }, 420);
-    }
+    },
   }
 })
 

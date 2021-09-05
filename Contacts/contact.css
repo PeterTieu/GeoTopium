@@ -11,12 +11,24 @@ p, div, button, h1, h2, h3 {
     border-color: #316C85;
 }
 
+label {
+    font-weight: 550;
+}
+
 h3 {
     text-align: center;
 }
 
 p {
     margin: 0%;
+}
+
+input {
+    margin-top: 2%;
+}
+
+textarea {
+    margin-top: 2%;
 }
 
 footer {
@@ -150,9 +162,13 @@ img.icon {
 .sub_heading {
     color: #666666;
     margin: auto;
-    padding: 10px;
-    font-size: 1.5em;
+    padding: 0px;
+    font-size: 1.2em;
     width: 70%;
+}
+
+#enquiry_drop_down_container {
+    margin-top: 2em;
 }
 
 /* Single line inputs */
@@ -160,7 +176,7 @@ img.icon {
     display: block;
     width: 100%;
     height: 30px;
-    font-size: 0.7em;
+    font-size: 1em;
     margin-bottom: 4%;
 }
 
@@ -169,15 +185,16 @@ img.icon {
     display: block;
     width: 100%;
     height: 12vw;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 /* Enquriry Type (drop-down box) */
 .enquiry_type {
     width: 60%;
     height: 32px;
-    font-size: 0.6em;
+    font-size: 1em;
     margin-bottom: 4%;
+    margin-top: 2%;
 }
 
 #buttons_container {

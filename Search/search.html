@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!-- Link to CSS stylesheet -->
-    <link rel="stylesheet" type="text/css" href="flags_difficulty_levels.css">
+    <link rel="stylesheet" type="text/css" href="search.css">
 
     <!-- Set responsiveness to screen size -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,9 +29,9 @@
 
         <!-- Anchor Tags to link to other pages -->
         <a id="nav" href="../Home/home.html">{{home}}</a>
-        <a id="nav" href="../Flags Difficulty Levels/flags_difficulty_levels.html" style="color: yellow;">{{flags}}</a>
+        <a id="nav" href="../Flags Difficulty Levels/flags_difficulty_levels.html">{{flags}}</a>
         <a id="nav" href="../Countries Difficulty Levels/countries_difficulty_levels.html">{{countries}}</a>
-        <a id="nav" href="../Search/search.html">{{search}}</a>
+        <a id="nav" href="../Search/search.html" style="color: yellow;">{{search}}</a>
         <a id="nav" href="../Contacts/contact.html">{{contact}}</a>
 
         <!--Drop-down menu icon - visible on smaller screen sizes-->
@@ -43,27 +43,53 @@
 
 
 <!-- Body Section -->
-<!-- Containers within: Page Banner, Difficulty Levels, Footer -->
+<!-- Containers within: Page Banner, Contact -->
 
 <body>
 
-    <!-- Page Banner Container -->
+    <!-- Page Banner -->
     <div id="page_banner_container">
         <p>
             {{heading}}
         </p>
     </div>
 
-    <!-- Difficulty Levels Container -->
-    <div id="difficulty_levels_container">
+    <br>
 
-        <!-- Difficulty Level Component -->
-        <difficulty-level-component id="difficulty_level_component" v-for="difficulty_level in difficulty_levels"
-            v-bind:difficulty_level="difficulty_level.level">
-            <p> {{difficulty_level=difficulty_level.level}} </p>
-        </difficulty-level-component>
+    <div id="search">
+
+        <!-- First Name (Input) -->
+        <div class="sub_heading">
+            <label for="search_query_input">{{searchInputHeading}}</span></label>
+            <input id="search_query_input" class="single_line_input" type="text" v-model="searchQueryInput"
+                v-on:change="searchHandler" placeholder="Enter partial or full name of any country">
+        </div>
+
+        <div id="countries_container">
+
+            <!-- Custom Component: Country Component -->
+            <!-- NOTE: The <country-component> tag renders a Flag Image-Country Name pair -->
+            <country-component id="country_component" v-for="country in searchQueryResults"
+                v-bind:flag_image="country.image_src" v-bind:country_name="country.name" v-bind:title="country.name">
+            </country-component>
+
+            <div id="pre_search_message" v-if="isSearchConducted">
+                {{preSearchMessage}}
+            </div>
+
+        </div>
+
 
     </div>
+
+
+
+
+
+
+
+
+
 
     <!-- Footer Component -->
     <footer>
@@ -76,6 +102,6 @@
 
 
 <!-- Link External JavaScript -->
-<script src="flags_difficulty_levels.js"></script>
+<script src="search.js"></script>
 
 </html>

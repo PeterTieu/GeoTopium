@@ -49,13 +49,16 @@ var app = new Vue({
 // ================== Container: Contact ===================================
 
 //Vue object: Contact
-var app = new Vue({
+var form = new Vue({
     el: '#contact_container',
-    data: {
+	data: {
+		// Headings
+        enquiryType: 'Type of Enquiry',
         sendAMessageHeading: 'Send a Message',
-        nameHeading: 'Name',
+        firstNameHeading: 'First Name',
+        lastNameHeading: 'Last Name',
+        subjectHeading: 'Subject',
         emailHeading: 'Email',
-        enquiryType: 'Enquiry Type',
         messageHeading: 'Message',
         findUsHeading: 'Find Us',
         notSpecified: 'Not Specified',
@@ -64,9 +67,101 @@ var app = new Vue({
         countriesChallenge: 'Countries Challenge',
         opportunities: 'Opportunities',
         getInTouch: 'Get In Touch',
-        feedback: 'Feedback'
-  }
+		feedback: 'Feedback',
+
+		// Inputs
+		firstNameInput: '',
+		lastNameInput: '',
+		emailInput: '',
+		subjectInput: '',
+		messageInput: '',
+    },
 });
+
+
+
+
+
+// ================== Manage Contact Form Submission ===================================
+
+//Called in the "Contact" form
+//Purposes:
+//1: Validates if required fields of the form are filled in
+//2: Populates email fields (e.g. Subject and Body)
+function manageContactFormSubmission() {
+	//Validate if required fields of the form are filled in
+	validateForm();
+
+	//Populate the Subject and Body of the email
+	document.forms['contact_form'].action =
+		'mailto:geotopium@gmail.com?subject=' + form.subjectInput + '&body=' + emailBody();
+}
+
+//Obtain email Body
+function emailBody() {
+	//Obtain the Enquiry Type selectedd
+	var enquirtyType = document.getElementById('enquiry_type');
+	var enquirtyTypeSelected = enquirtyType.options[enquirtyType.selectedIndex].text;
+
+	//Compile all the relevant entered values from the Contact Us from from the object of all entered values
+	var compiledEmailMessage =
+		'===== SENDER INFORMATION =====' +
+		'%0D%0A' +
+		'NAME:' +
+		'%0D%0A' +
+		form.firstNameInput +
+		' ' +
+		form.lastNameInput +
+		'%0D%0A' +
+		'%0D%0A' +
+		'EMAIL ADDRESS:' +
+		'%0D%0A' +
+		form.emailInput +
+		'%0D%0A' +
+		'%0D%0A' +
+		'ENQUIRY TYPE:' +
+		'%0D%0A' +
+		enquirtyTypeSelected +
+		'%0D%0A' +
+		'%0D%0A' +
+		'===== MESSAGE =====' +
+		'%0D%0A' +
+		form.messageInput +
+		'%0D%0A' +
+		'%0D%0A';
+
+	return compiledEmailMessage;
+}
+
+
+//Validate the Contact Us form
+function validateForm() {
+
+	//Define alert message header
+	var alertMessage = 'Unable to proceed:';
+
+	//Append to alert message if applicable
+	if (form.firstNameInput === '') {
+		alertMessage += '\n' + '-> FIRST NAME is required';
+	}
+
+	if (form.lastNameInput === '') {
+		alertMessage += '\n' + '-> LAST NAME is required';
+	}
+
+	if (form.emailInput === '') {
+		alertMessage += '\n' + '-> EMAIL is required';
+	}
+
+	//Prevent form submission should a required field is not present
+	if (form.firstNameInput === '' || form.lastNameInput === '' || form.emailInput === '') {
+		alert(alertMessage);
+
+		event.preventDefault();
+		return false;
+	}
+}
+
 
 
 /*============================== Add Responsiveness Features =============================*/
@@ -99,3 +194,5 @@ function resizeNav() {
         nav.className = "nav";
     }
 }
+
+

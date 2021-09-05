@@ -7,12 +7,28 @@ body {
 
 p, div, button, h1, h2, h3 {
     color: black;
-    text-align: center;
     border-radius: 5px;
     border-color: #316C85;
 }
+
+label {
+    font-weight: 550;
+}
+
+h3 {
+    text-align: center;
+}
+
 p {
     margin: 0%;
+}
+
+input {
+    margin-top: 2%;
+}
+
+textarea {
+    margin-top: 2%;
 }
 
 footer {
@@ -27,6 +43,13 @@ footer {
 img.icon {
     max-height: 30px;
     width: auto;
+}
+
+
+
+/*============================== General Layout =========================================*/
+.column {
+    float: left;
 }
 
 
@@ -57,6 +80,7 @@ img.icon {
     background-color: rgb(106, 155, 228);
     color: #ffed62;
 }
+
 /* Fix the elements in this class to the top of the page */
 .sticky {
     position: fixed;
@@ -75,7 +99,6 @@ img.icon {
 }
 
 
-
 /*============================== Elements ===============================================*/
 /* Logo */
 #logo {
@@ -84,16 +107,12 @@ img.icon {
 }
 
 
-
 /*============================== Components and Containers ==============================*/
-
-/* >>>>>>>>>>>>>>>>> Side Panel (Component) <<<<<<<<<<<<<<<<< */
 
 /* Containers within:
     -> Page Banner
-    -> Countries
+    -> Contact
 */
-
 
 /* Page Banner Container */
 #page_banner_container {
@@ -105,8 +124,9 @@ img.icon {
 }
 
 #page_banner_container p {
+    text-align: center;
     color: #540A6D;
-    font-size: 4.5vh;
+    font-size: 4vh;
     font-weight: 600;
     padding: 50px;
     margin: 0;
@@ -120,6 +140,7 @@ img.icon {
 /* Countries Container */
 #countries_container {
     background-color: #B3EDFA;
+    min-height: 55vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -129,17 +150,50 @@ img.icon {
     margin-right: 10%;
 }
 
-/* Country Component */
+#pre_search_message {
+    font-size: 2.2em;
+    color: #124d21;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(30%);
+}
+
+/* Countries Component */
 #country_component {
   padding: 20px;
   font-size: 0.7em;
 }
+
+/* Sub Headings for each of the input fields */
+.sub_heading {
+    color: #666666;
+    margin: auto;
+    padding: 0px;
+    font-size: 1.2em;
+    width: 70%;
+}
+
+
+/* Single line inputs */
+.single_line_input {
+    display: block;
+    width: 100%;
+    height: 30px;
+    font-size: 1em;
+    margin-bottom: 4%;
+}
+
+
+
 
 
 /* >>>>>>>>>>>>>>>>> Footer (Component) <<<<<<<<<<<<<<<<< */
 
 .footer_component h3{
     position: relative;
+    margin-top: 0;
 }
 
 /* Footer Text */
@@ -147,6 +201,7 @@ img.icon {
   position: static;
   left: 50%;
   color: white;
+  padding-top: 2%;
 }
 
 
@@ -155,20 +210,6 @@ img.icon {
 
 /* When screen size is 620px or smaller*/
 @media screen and (max-width: 620px) {
-
-    /* >>>>>>>>>>>>>>>>> General Layout <<<<<<<<<<<<<<<<< */
-
-    /* Reduce the content down to one longer scrolling column, with no dividing border */
-    .column {
-        float: none;
-        width: 100%;
-    }
-
-    /* Remove border style */
-    .content {
-        border-style: none;
-    }
-
 
     /* >>>>>>>>>>>>>>>>> Navigation Bar <<<<<<<<<<<<<<<<< */
 
