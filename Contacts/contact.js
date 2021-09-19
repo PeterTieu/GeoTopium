@@ -13,6 +13,7 @@ var app = new Vue({
 });
 
 
+
 // ================== Section: Footer ===================================
 
 //Vue object: Page Title
@@ -22,6 +23,7 @@ var app = new Vue({
         footerText: 'TieuTech',
   }
 });
+
 
 
 // ================== Page Title ===================================
@@ -35,6 +37,7 @@ var app = new Vue({
 });
 
 
+
 // ================== Container: Page Banner ===================================
 
 //Vue object: Page Title
@@ -44,6 +47,7 @@ var app = new Vue({
         heading: 'Contact Us',
   }
 });
+
 
 
 // ================== Container: Contact ===================================
@@ -69,6 +73,12 @@ var form = new Vue({
         getInTouch: 'Get In Touch',
 		feedback: 'Feedback',
 
+		// Contact Information
+		developerLabel: 'Developer: ',
+		addressLabel: 'Address: ',
+		contactName: 'Peter Tieu',
+		contactAddress: 'Melbourne, VIC 3000',
+
 		// Inputs
 		firstNameInput: '',
 		lastNameInput: '',
@@ -76,9 +86,18 @@ var form = new Vue({
 		subjectInput: '',
 		messageInput: '',
     },
+
+	methods: {
+		resetInputs: function () {
+			// Inputs
+			this.firstNameInput = '';
+			this.lastNameInput = '';
+			this.emailInput = '';
+			this.subjectInput = '';
+			this.messageInput = '';
+		}
+	}
 });
-
-
 
 
 
@@ -194,5 +213,3 @@ function resizeNav() {
         nav.className = "nav";
     }
 }
-
-

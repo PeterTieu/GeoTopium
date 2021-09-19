@@ -35,7 +35,7 @@ var app = new Vue({
     el: '#side_panel',
     data: {
         questionText: 'Question ',
-        of20Text: ' of 20 ',
+        of8Text: ' of 8 ',
         timerText: 'Timer',
         secondsText: 'S',
         scoreSubheading: 'Score'
@@ -457,13 +457,14 @@ x.addListener(myFunction) // Attach listener function on state changes
 /* >>>>>>>>>>>>>>>>> Declare and assign operations variables <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 const MAX_TIME_REMAINING = 15;          // Countdown time per question (in seconds)
-const TOTAL_NUM_QUESTIONS = 5;          // Total number of questions in the Challenge
+const TOTAL_NUM_QUESTIONS = 8;          // Total number of questions in the Challenge
 var challengeType = "flags_challenge";  // Challenge Type identifier
 var isPossibleAnswerSelected = false;   // Flag to signal whether a Possible Answer has been selected
 var randomPromptCountryName;            // Country Name of the Prompt
 var questionCounter = 1;                // Question Number
 var scoreCounter = 0;                   //Score
 var attemptsRemaining = 3;              // Number of attemps remaining
+
 
 
 /* >>>>>>>>>>>>>>>>> Set up the Prompt <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
@@ -564,7 +565,6 @@ function getCountryNameOfSelectedAnswer(possibleAnswerSrc) {
 }
 
 
-
 // ----------- Update Score ------------------------------------
 
 function updateScore(possibleAnswerSrc) {
@@ -581,7 +581,6 @@ function updateScore(possibleAnswerSrc) {
     score.innerHTML = scoreCounter;
 
 }
-
 
 
 // ----------- Update Timer -----------------------------------
@@ -639,7 +638,6 @@ function updateTimer() {
 }
 
 
-
 // ----------- Update Heart Icons (Attempts Remaining) ---------
 
 // Update the heart icons based on the Possible Answer selected
@@ -678,7 +676,6 @@ function decrementHeart() {
         heartIconLeft.src = '../Assets/heart_empty.png'
     }
 }
-
 
 
 // ----------- Play Sound Effects ------------------------------
@@ -846,7 +843,6 @@ function possibleAnswerOnMouseOverListener() {
 }
 
 
-
 // ---- Add onClick listeners to each of the Possible Answers (Flag Images)  -----------------
 possibleAnswer1.addEventListener('click', possibleAnswerListener);  //Possible Answer 1
 possibleAnswer2.addEventListener('click', possibleAnswerListener);  //Possible Answer 2
@@ -859,7 +855,6 @@ possibleAnswer1.addEventListener("mouseover", possibleAnswerOnMouseOverListener)
 possibleAnswer2.addEventListener("mouseover", possibleAnswerOnMouseOverListener);  //Possible Answer 2
 possibleAnswer3.addEventListener("mouseover", possibleAnswerOnMouseOverListener);  //Possible Answer 3
 possibleAnswer4.addEventListener("mouseover", possibleAnswerOnMouseOverListener);  //Possible Answer 4
-
 
 
 

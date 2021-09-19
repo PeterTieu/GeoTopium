@@ -56,13 +56,13 @@
 
     <!-- Contact Container -->
     <div id="contact_container">
-        <div id="send_a_message_heading">
+        <div class="container_heading">
             {{sendAMessageHeading}}
         </div>
 
         <br>
 
-
+        <!-- Contact Form -->
         <form name="contact_form" action="mailto:sit124group8@deakin.edu.au" method="post" enctype="text/plain"
             onsubmit="manageContactFormSubmission();">
 
@@ -88,7 +88,8 @@
             <!-- First Name (Input) -->
             <div class="sub_heading">
                 <label for="first_name_input">{{firstNameHeading}}<span style="color:red"> *</span></label>
-                <input id="first_name_input" class="single_line_input" v-model="firstNameInput" placeholder="Required">
+                <input v-focus id="first_name_input" class="single_line_input" v-model="firstNameInput"
+                    placeholder="Required">
             </div>
 
             <!-- Last Name (Input) -->
@@ -118,19 +119,25 @@
                     placeholder="Enter the message of the enquiry"></textarea>
             </div>
 
-
             <!-- Buttons Container -->
             <div id="buttons_container">
-                <input id="reset_button" type="reset" value="Reset">
+                <input id="reset_button" @click="resetInputs" type="reset" value="Reset">
                 <input id="submit_button" type="submit" value="Send">
             </div>
 
         </form>
 
+        <hr id="thematic_break">
 
         <!-- Location Container -->
-        <div class="sub_heading">
-            <label for="message_text_area">{{findUsHeading}}</label>
+        <div id="location_container" class="container_heading">
+            <div>{{findUsHeading}}</div>
+
+            <div id="contact_information_container">
+                <p> <span class="contact_information_label">{{developerLabel}}</span> <span>{{contactName}}</span></p>
+                <br>
+                <p> <span class="contact_information_label">{{addressLabel}}</span> <span>{{contactAddress}}</span></p>
+            </div>
 
             <!-- Geolocation API -->
             <iframe id="map"
@@ -140,6 +147,7 @@
 
     </div>
 
+
     <!-- Footer Component -->
     <footer>
         <div class="footer_component">
@@ -148,6 +156,19 @@
     </footer>
 
 </body>
+
+<script>
+    // Custom Directive "v-focus"
+    // To focus the cursor onto the Search input element
+    // This assumes that the Search input element uses the <input v-focus> tag
+    Vue.directive('focus', {
+        // When the bound element is inserted into the DOM...
+        inserted: function (el) {
+            // Focus the element
+            el.focus()
+        }
+    })
+</script>
 
 
 <!-- Link External JavaScript -->

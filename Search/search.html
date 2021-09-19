@@ -1,3 +1,5 @@
+<!-- ABOUT: Search page of GeoTopium. Allows the user to search for any Flag Image-Country Name pair by typing in the partial or full name of a country -->
+
 <!DOCTYPE html>
 <html>
 
@@ -16,6 +18,8 @@
 
     <!-- Set the title -->
     <title id="page_title">{{title}}</title>
+
+
 </head>
 
 
@@ -56,39 +60,36 @@
 
     <br>
 
+
+    <!-- Main Section -->
     <div id="search">
 
-        <!-- First Name (Input) -->
+        <!-- Search (Input) -->
         <div class="sub_heading">
             <label for="search_query_input">{{searchInputHeading}}</span></label>
-            <input id="search_query_input" class="single_line_input" type="text" v-model="searchQueryInput"
-                v-on:change="searchHandler" placeholder="Enter partial or full name of any country">
+            <input v-focus id="search_query_input" class="single_line_input" type="text" v-model="searchQueryInput"
+                placeholder="Enter partial or full name of any country" v-bind:id="rawId | formatId">
         </div>
 
         <div id="countries_container">
-
             <!-- Custom Component: Country Component -->
+
             <!-- NOTE: The <country-component> tag renders a Flag Image-Country Name pair -->
-            <country-component id="country_component" v-for="country in searchQueryResults"
+            <country-component id="country_component" v-for="country in filteredList"
                 v-bind:flag_image="country.image_src" v-bind:country_name="country.name" v-bind:title="country.name">
             </country-component>
 
-            <div id="pre_search_message" v-if="isSearchConducted">
-                {{preSearchMessage}}
-            </div>
+            <transition name="slide-fade">
+                <div id="pre_search_message" v-if="isSearchConducted">
+                    {{preSearchMessage}}
+                </div>
+            </transition>
 
         </div>
 
 
+
     </div>
-
-
-
-
-
-
-
-
 
 
     <!-- Footer Component -->
@@ -99,6 +100,19 @@
     </footer>
 
 </body>
+
+<script>
+    // Custom Directive "v-focus"
+    // To focus the cursor onto the Search input element
+    // This assumes that the Search input element uses the <input v-focus> tag
+    Vue.directive('focus', {
+        // When the bound element is inserted into the DOM...
+        inserted: function (el) {
+            // Focus the element
+            el.focus()
+        }
+    })
+</script>
 
 
 <!-- Link External JavaScript -->

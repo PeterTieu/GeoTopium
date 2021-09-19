@@ -191,14 +191,25 @@ img.icon {
         top: 0;
     }
 
-    /* Links for the "responsive" class */
+    /* Links for the "responsive" class - GeoTopium link */
     .nav.responsive a {
-        background-color: #172765;
+        background-color: #316C85;
         color: white;
         text-align: left;
         text-decoration: none;
         float: none;
         display: block;
+        border: solid 0.5px black;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the 2nd link */
+    .nav.responsive a:nth-child(2n+2) {
+        background-color: #57a3c4;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the third link */
+    .nav.responsive a:nth-child(2n+3) {
+        background-color: #42968e;
     }
 
     /* GeoTopium Logo */

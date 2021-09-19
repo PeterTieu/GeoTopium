@@ -13,6 +13,7 @@ var app = new Vue({
 });
 
 
+
 // ================== Section: Footer ===================================
 
 //Vue object: Page Title
@@ -22,6 +23,7 @@ var app = new Vue({
         footerText: 'TieuTech',
   }
 });
+
 
 
 // ================== Page Title ===================================
@@ -35,6 +37,7 @@ var app = new Vue({
 });
 
 
+
 // ================== Container: Page Banner ===================================
 
 //Vue object: Page Title
@@ -45,6 +48,9 @@ var app = new Vue({
   }
 });
 
+
+
+// ================== Array storing Flag Image-Country Name pairs ===================================
 
 // Array containing directory locations of all Flag Images (for the Possible Answers)
 countries = [
@@ -251,11 +257,9 @@ countries = [
 ];
 
 
-
-
 // ================== Container: Search ===================================
 
-//Vue object: Contact
+//Vue object: Search
 var search = new Vue({
     el: '#search',
 	data: {
@@ -275,18 +279,15 @@ var search = new Vue({
 		searchQueryResults: '',
 	},
 
-	// Define methods
-	methods: {
-		// Listen to the search query and render the Country Name-Flag Image pairs accordingly
-		searchHandler: function () {
+	// Implement computed property to search for Flag Image-Country Name pairs
+	computed: {
+		filteredList() {
+			// return countries.filter((country) => {
+			// 	return country.name.toLowerCase().includes(this.searchQueryInput.toLowerCase());
+			// });
 
-			// Retrieve the elements of the "countries" array that match with the search query (through the use of a query), and store them into the "searchQueryResults" array
-				// NOTE:
-				// "search.searchQueryInput" is the string entered into the search input element
-				// "this.searchQueryResults" is the array containing all countries matching the search results
-				// The use of the "toLowerCase()" method allows for case insensitivity in the search query
-			this.searchQueryResults = countries.filter(function (el) {
-				return el.name.toLowerCase().includes(search.searchQueryInput.toLowerCase(), 0)
+			this.searchQueryResults = countries.filter((country) => {
+				return country.name.toLowerCase().includes(this.searchQueryInput.toLowerCase());
 			});
 
 			// If the search query is empty
@@ -304,8 +305,10 @@ var search = new Vue({
 				// Switch the "isSearchConducted" flag to false so that the 'Pre-search message' is not displayed
 				this.isSearchConducted = false;
 			}
+
+			return this.searchQueryResults
 		}
-  }
+	},
 });
 
 
@@ -315,11 +318,13 @@ Vue.component("country-component", {
   props: ['flag_image', 'country_name'],
 
   // Define template
-  template:
+	template:
+	"<transition name=\"slide-fade\">" +
     "<span v-on:click=\"greet(country_name)\">" +
     "<img v-bind:src='flag_image' style=\"width:200px; height:130px;\">" +
     "<h2>{{country_name}}</h2>" +
-    "</span>",
+	"</span>" +
+	"</transition>",
 })
 
 
@@ -354,5 +359,3 @@ function resizeNav() {
         nav.className = "nav";
     }
 }
-
-

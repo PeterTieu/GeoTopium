@@ -16,7 +16,6 @@ div{
     border-color: black;
 }
 
-
 p {
     margin: 0%;
 }
@@ -94,6 +93,7 @@ img.icon {
 }
 
 
+
 /*============================== Elements ===============================================*/
 /* Logo */
 #logo {
@@ -119,6 +119,7 @@ img.icon {
     font-size: 1.6em;
     font-weight: 600;
 }
+
 
 
 /*============================== Component and Container ================================*/
@@ -295,7 +296,6 @@ footer {
 }
 
 
-
 /* >>>>>>>>>>>>>>>>> Footer (Component) <<<<<<<<<<<<<<<<< */
 
 .footer_component h3{
@@ -311,10 +311,9 @@ footer {
 
 
 
-
 /*============================== Responsiveness =========================================*/
 
-/* When screen size is 620px or smaller*/
+/* When screen size is 1000px or smaller*/
 @media screen and (max-width: 1000px) {
 
     #score {
@@ -359,7 +358,6 @@ footer {
 }
 
 
-
 /* When screen size is 620px or smaller*/
 @media screen and (max-width: 620px) {
 
@@ -391,21 +389,31 @@ footer {
         top: 0;
     }
 
-    /* Links for the "responsive" class */
+    /* Links for the "responsive" class - GeoTopium link */
     .nav.responsive a {
-        background-color: #172765;
+        background-color: #316C85;
         color: white;
         text-align: left;
         text-decoration: none;
         float: none;
         display: block;
+        border: solid 0.5px black;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the 2nd link */
+    .nav.responsive a:nth-child(2n+2) {
+        background-color: #57a3c4;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the third link */
+    .nav.responsive a:nth-child(2n+3) {
+        background-color: #42968e;
     }
 
     /* GeoTopium Logo */
     .logo {
         background-color: #17652b;
     }
-
 
     /* >>>>>>>>>>>>>>>>> Containers <<<<<<<<<<<<<<<<< */
     /*  */

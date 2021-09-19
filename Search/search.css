@@ -49,6 +49,25 @@ img.icon {
 }
 
 
+/*-------- Enter and Leave Transitions for Flag Image-Country Name pairs --------*/
+
+/* Enter Transition */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+/* Leave Transition */
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+
 
 /*============================== General Layout =========================================*/
 .column {
@@ -190,9 +209,6 @@ img.icon {
 }
 
 
-
-
-
 /* >>>>>>>>>>>>>>>>> Footer (Component) <<<<<<<<<<<<<<<<< */
 
 .footer_component h3{
@@ -235,14 +251,35 @@ img.icon {
         top: 0;
     }
 
-    /* Links for the "responsive" class */
+    /* Links for the "responsive" class - GeoTopium link */
     .nav.responsive a {
-        background-color: #172765;
+        background-color: #316C85;
         color: white;
         text-align: left;
         text-decoration: none;
         float: none;
         display: block;
+        border: solid 0.5px black;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the 2nd link */
+    .nav.responsive a:nth-child(2n+2) {
+        background-color: #57a3c4;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the third link */
+    .nav.responsive a:nth-child(2n+3) {
+        background-color: #42968e;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the 2nd link */
+    .nav.responsive a:nth-child(2n+2) {
+        background-color: #57a3c4;
+    }
+
+    /* Links for the "responsive" class - every second link starting from the third link */
+    .nav.responsive a:nth-child(2n+3) {
+        background-color: #42968e;
     }
 
     /* GeoTopium Logo */

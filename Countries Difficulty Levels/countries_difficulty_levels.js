@@ -8,6 +8,8 @@ var app = new Vue({
   }
 });
 
+
+
 // ================== Section: Navigation Bar ===================================
 
 //Vue object: Page Title
@@ -21,6 +23,8 @@ var app = new Vue({
         contact: 'Contact'
   }
 });
+
+
 
 // ================== Container: Page Banner ===================================
 

@@ -35,7 +35,7 @@ var app = new Vue({
     el: '#side_panel',
     data: {
         questionText: 'Question ',
-        of20Text: ' of 20 ',
+        of8Text: ' of 8 ',
         timerText: 'Timer',
         secondsText: 'S',
         scoreSubheading: 'Score'
@@ -183,7 +183,7 @@ switch (difficultyLevel) {
         flagImagesDirectory.push('../Assets/Flag_Images/Poland.png');
         flagImagesDirectory.push('../Assets/Flag_Images/Romania.png');
         flagImagesDirectory.push('../Assets/Flag_Images/Scotland.png');
-        flagImagesDirectory.push('../Assets/Flag_Images/Singaporre.png');
+        flagImagesDirectory.push('../Assets/Flag_Images/Singapore.png');
         flagImagesDirectory.push('../Assets/Flag_Images/Slovakia.png');
         flagImagesDirectory.push('../Assets/Flag_Images/Slovenia.png');
         flagImagesDirectory.push('../Assets/Flag_Images/Thailand.png');
@@ -519,7 +519,7 @@ switch (difficultyLevel) {
 /* >>>>>>>>>>>>>>>>> Declare and assign operations variables <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 const MAX_TIME_REMAINING = 15;              // Countdown time per question (in seconds)
-const TOTAL_NUM_QUESTIONS = 5;              // Total number of questions in the Challenge
+const TOTAL_NUM_QUESTIONS = 8;              // Total number of questions in the Challenge
 var challengeType = "countries_challenge";  // Challenge Type identifier
 var isPossibleAnswerSelected = false;       // Flag to signal whether a Possible Answer is selected
 var randomPromptFlagImage;                  // Directory for the src of the Flag Image Prompt
