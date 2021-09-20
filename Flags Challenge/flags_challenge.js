@@ -544,7 +544,6 @@ score.innerHTML = scoreCounter;
 questionNumber.innerHTML = questionCounter;
 
 
-
 // ----------- Update Question Number -------------------------
 
 function updateQuestionNumber() {

@@ -1,8 +1,7 @@
 /* ============================== Tags ==================================================*/
+/* Prevent scrolling */
 body {
-    font-family: sans-serif;
-    background-color: #ADD4E0;
-    margin: 2px;
+    overflow: hidden;
 }
 
 p, div, button, h1, h2, h3 {
@@ -12,95 +11,13 @@ p, div, button, h1, h2, h3 {
     border-color: #316C85;
 }
 
-div{
-    border-color: black;
-}
-
-p {
-    margin: 0%;
-}
-
-footer {
-    clear:both;
-    background-color: #318085;
-    position: relative;
-    height: 50px;
-}
-
 img {
     max-width: 100%;
     height: auto;
     max-height: 15%;
 }
 
-/*Limit the height of menu icon image and scale the width accordingly */
-img.icon {
-    max-height: 30px;
-    width: auto;
-}
-
-
-
-/*============================== General Layout =========================================*/
-.column {
-    float: left;
-}
-
-
-
-/*============================== Navigation Bar =========================================*/
-/* Navigation Bar */
-.nav {
-    background-color: #316C85;
-    border-style: solid;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 10px 5px 5px rgb(50, 207, 213);
-}
-
-/* Style the links inside the navigation bar */
-.nav a {
-    font-size: 30px;
-    min-width: 15%;
-    float: left;
-    background-color: #316C85;
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-}
-
-/* Change the color of links upon hover */
-.nav a:hover {
-    background-color: rgb(106, 155, 228);
-    color: #ffed62;
-}
-/* Fix the elements in this class to the top of the page */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-/*Hide Start Menu Icon by default*/
-.nav a.icon {
-    display: none;
-}
-
-/*Change background of menu icon upon hover */
-.nav a.icon:hover {
-    background-color: black;
-}
-
-
-
 /*============================== Elements ===============================================*/
-/* Logo */
-#logo {
-    margin-top: 3%;
-    width: 180px;
-}
-
 #difficulty_level {
     position: absolute;
     color: black;
@@ -367,37 +284,6 @@ footer {
     .column {
         float: none;
         width: 100%;
-    }
-
-    /* >>>>>>>>>>>>>>>>> Navigation Bar <<<<<<<<<<<<<<<<< */
-
-    /* Remove the entire navigation bar, except for the first anchor element (i.g. logo) */
-    .nav a:not(:first-child) {
-        display: none;
-    }
-
-    .nav a.icon {
-      float: right;
-      display: block;
-    }
-
-    /* Display menu item links vertically (instead of horizontally) */
-    .nav.responsive {position: relative;}
-    .nav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    /* Links for the "responsive" class - GeoTopium link */
-    .nav.responsive a {
-        background-color: #316C85;
-        color: white;
-        text-align: left;
-        text-decoration: none;
-        float: none;
-        display: block;
-        border: solid 0.5px black;
     }
 
     /* Links for the "responsive" class - every second link starting from the 2nd link */
