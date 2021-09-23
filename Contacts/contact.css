@@ -12,6 +12,8 @@
   border: 3px solid green;
   position: relative;
   background: linear-gradient(-90deg, #eb8e79, #d2e483);
+  box-shadow: 2px 5px 15px 2px grey;
+  border-radius: 15px;
 }
 
 #page_banner_container p {
@@ -38,6 +40,7 @@
   margin-bottom: 0;
   margin-left: 10%;
   margin-right: 10%;
+  box-shadow: 2px 5px 15px 2px grey;
 }
 
 /* Container Heading */
@@ -181,6 +184,8 @@
   margin-top: 3%;
   height: 50vh;
   width: 100%;
+  border-radius: 10px;
+   box-shadow: 2px 5px 15px 2px grey;
 }
 
 /* >>>>>>>>>>>>>>>>> Footer (Component) <<<<<<<<<<<<<<<<< */

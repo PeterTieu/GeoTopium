@@ -72,6 +72,7 @@ img {
     font-size: 1.4em;
     padding: 3%;
     border-style: solid;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 /* Question Subheading */
@@ -93,6 +94,7 @@ img {
     height: 200px;
     padding: 3%;
     border-style: solid;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 /* Time Reamaining Number */
@@ -119,6 +121,7 @@ img {
     max-height: 10%;
     padding: 3%;
     border-style: solid;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 /* Score Number */
@@ -177,6 +180,7 @@ footer {
     height: 250px;
     margin-left: 1%;
     margin-top: 1%;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 
@@ -198,6 +202,7 @@ footer {
     margin-top: 2%;
     margin-left: 1%;
     margin-bottom: 1%;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 /* Country Name */

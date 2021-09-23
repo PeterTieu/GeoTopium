@@ -14,6 +14,8 @@
     border: 3px solid green;
     position: relative;
     background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+    box-shadow: 2px 5px 15px 2px grey;
+    border-radius: 15px;
 }
 
 #page_banner_container p {
@@ -44,6 +46,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 #difficulty_level_component {
@@ -58,6 +61,11 @@
 
 #difficulty_level_component p{
     font-size: 1.5em;
+}
+
+#difficulty_level_component button {
+  box-shadow: 2px 5px 10px 2px grey;
+  border-radius: 12px;
 }
 
 /*========== Button: "Beginner" ==========*/

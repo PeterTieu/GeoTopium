@@ -40,6 +40,8 @@
     border: 3px solid green;
     position: relative;
     background: linear-gradient(-90deg, #3bf29d, #edd471);
+    box-shadow: 2px 5px 15px 2px grey;
+    border-radius: 15px;
 }
 
 #page_banner_container p {
@@ -67,6 +69,8 @@
     padding-right: 30px;
     margin-left: 10%;
     margin-right: 10%;
+    box-shadow: 2px 5px 15px 2px grey;
+    border-radius: 12px 12px 0 0;
 }
 
 #pre_search_message {

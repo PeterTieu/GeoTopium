@@ -23,6 +23,8 @@ p, button, h1, h2, h3 {
     border: 3px solid green;
     position: relative;
     background: linear-gradient(-90deg, #46e1f5, #a283f7);
+    box-shadow: 2px 5px 15px 2px grey;
+    border-radius: 15px;
 }
 
 #page_banner_container p {
@@ -48,6 +50,8 @@ p, button, h1, h2, h3 {
     padding-right: 30px;
     margin-left: 10%;
     margin-right: 10%;
+    box-shadow: 2px 5px 15px 2px grey;
+    border-radius: 0 0 10px 10px;
 }
 
 /* Country Component */

@@ -65,7 +65,7 @@ var countries_container = new Vue({
     // 1: Country Name (name)
     // 2: Flag Image image source (image_src)
     countries: [
-      {
+          {
         name: "Afghanistan",
         image_src: "../Assets/Flag_Images/Afghanistan.png",
       },

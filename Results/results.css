@@ -14,6 +14,8 @@
     border: 3px solid green;
     position: relative;
     background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+    box-shadow: 2px 5px 15px 2px grey;
+    border-radius: 15px;
 }
 
 #page_banner_container p {
@@ -40,18 +42,22 @@
 
 #score_container{
     background-color:#EFD195;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 #attempts_remaining_container{
     background-color:#95B9EF;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 #question_answered_container{
     background-color:#EF9595;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 #difficulty_level_container{
     background-color:#97EF95;
+    box-shadow: 2px 5px 15px 2px grey;
 }
 
 .sub_container {
