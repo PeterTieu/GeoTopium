@@ -1,3 +1,8 @@
+// ABOUT:
+//  JavaScript file for the Results page
+// DESCRIPTION:
+//  Retrieves stored data from the Flags Challenge or Countries Challenge, which would be rendered to the Results page
+
 /* >>>>>>>>>>>>>>>>> Obtain Data from Flags Challenge Difficulty Page <<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 var challengeType = localStorage.getItem("challengeType");
 var scoreCounter = localStorage.getItem("scoreCounter");
@@ -33,7 +38,7 @@ var app = new Vue({
 
 // ================== Section: Navigation Bar ===================================
 
-//Vue object: Page Title
+//Vue object: Nav
 var app = new Vue({
     el: '#nav',
     data: {
@@ -49,7 +54,7 @@ var app = new Vue({
 
 // ================== Section: Footer ===================================
 
-//Vue object: Page Title
+//Vue object: Footer Text
 var app = new Vue({
     el: '#footer_text',
     data: {
@@ -61,7 +66,7 @@ var app = new Vue({
 
 // ================== Container: Page Banner ===================================
 
-//Vue object: Page Title
+//Vue object: Page Banner Container
 var app = new Vue({
     el: '#page_banner_container',
     data: {
@@ -71,9 +76,7 @@ var app = new Vue({
 
 // ================== Container: Results ===================================
 
-// attemptsRemaining = 3;
-
-//Vue object: Page Title
+//Vue object: Results Container
 var app = new Vue({
     el: '#results_container',
     data: {

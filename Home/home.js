@@ -1,3 +1,8 @@
+// ABOUT:
+//  JavaScript file for the Home page
+// DESCRIPTION:
+//  Defines the Flag Image-Country Name pair component, and contains data to render each pair
+
 // ================== Page Title ===================================
 
 //Vue object: Page Title
@@ -10,7 +15,7 @@ var app = new Vue({
 
 // ================== Section: Navigation Bar ===================================
 
-//Vue object: Page Title
+//Vue object: Nav
 var app = new Vue({
   el: "#nav",
   data: {
@@ -24,7 +29,7 @@ var app = new Vue({
 
 // ================== Section: Footer ===================================
 
-//Vue object: Page Title
+//Vue object: Footer Text
 var app = new Vue({
   el: "#footer_text",
   data: {
@@ -34,7 +39,7 @@ var app = new Vue({
 
 // ================== Container: Page Banner ===================================
 
-//Vue object: Page Title
+//Vue object: Page Banner Container
 var app = new Vue({
   el: "#page_banner_container",
   data: {

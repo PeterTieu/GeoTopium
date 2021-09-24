@@ -1,5 +1,7 @@
 // ABOUT:
-// This JavaScript file manages the operations and interactivities of the Flags Challenge page (flags_challenge.html)
+//  JavaScript file for the Flags Challenge page
+// DESCRIPTION:
+//  Manages the operations and interactivities of the Flags Challenge page
 
 // Retrieve the selected Difficulty Level from the Flags Difficulty Levels page
 var difficultyLevel = localStorage.getItem("difficulty_level");
@@ -16,7 +18,7 @@ var app = new Vue({
 
 // ================== Section: Footer ===================================
 
-//Vue object: Page Title
+//Vue object: Footer Text
 var app = new Vue({
   el: "#footer_text",
   data: {
@@ -26,7 +28,7 @@ var app = new Vue({
 
 // ================== Component: Side Panel ===================================
 
-//Vue object: Page Title
+//Vue object: Side Panel
 var app = new Vue({
   el: "#side_panel",
   data: {
@@ -40,7 +42,7 @@ var app = new Vue({
 
 // ================== Section: Navigation Bar ===================================
 
-//Vue object: Page Title
+//Vue object: Nav
 var app = new Vue({
   el: "#nav",
   data: {
@@ -54,7 +56,7 @@ var app = new Vue({
 
 // ================== Difficulty Level ===================================
 
-//Vue object: Page Title
+//Vue object: Difficulty Level
 var app = new Vue({
   el: "#difficulty_level",
   data: {

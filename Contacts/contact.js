@@ -1,6 +1,11 @@
+// ABOUT:
+//  JavaScript file for the Contact page
+// DESCRIPTION:
+//  Processes the user input into email Subject and Message Body, as well as form Alert message for required information
+
 // ================== Section: Navigation Bar ===================================
 
-//Vue object: Page Title
+//Vue object: Nav
 var app = new Vue({
   el: "#nav",
   data: {
@@ -14,7 +19,7 @@ var app = new Vue({
 
 // ================== Section: Footer ===================================
 
-//Vue object: Page Title
+//Vue object: Footer Text
 var app = new Vue({
   el: "#footer_text",
   data: {
@@ -34,7 +39,7 @@ var app = new Vue({
 
 // ================== Container: Page Banner ===================================
 
-//Vue object: Page Title
+//Vue object: Page Banner Container
 var app = new Vue({
   el: "#page_banner_container",
   data: {
@@ -44,7 +49,7 @@ var app = new Vue({
 
 // ================== Container: Contact ===================================
 
-//Vue object: Contact
+//Vue object: Contact Container
 var form = new Vue({
   el: "#contact_container",
   data: {
@@ -57,6 +62,8 @@ var form = new Vue({
     emailHeading: "Email",
     messageHeading: "Message",
     findUsHeading: "Find Us",
+
+    // Drop-down Options
     notSpecified: "Not Specified",
     countries: "Countries",
     flagsChallenge: "Flags Challenge",

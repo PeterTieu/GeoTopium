@@ -1,4 +1,7 @@
-<!-- ABOUT: Search page of GeoTopium. Allows the user to search for any Flag Image-Country Name pair by typing in the partial or full name of a country -->
+<!-- ABOUT:
+      HTML file for Search Page -->
+<!-- DESCRIPTION:
+    Search page of GeoTopium. Allows the user to search for any Flag Image-Country Name pair by typing in the partial or full name of a country -->
 
 <!DOCTYPE html>
 <html>
@@ -20,12 +23,10 @@
     <!-- Set the title -->
     <title id="page_title">{{title}}</title>
 
-
 </head>
 
 
 <!-- Header Section -->
-
 <header>
     <!--Navigation bar-->
     <div id="nav" class="nav">
@@ -72,6 +73,7 @@
                 placeholder="Enter partial or full name of any country" v-bind:id="rawId | formatId">
         </div>
 
+        <!-- Countries Container -->
         <div id="countries_container">
             <!-- Custom Component: Country Component -->
 
@@ -80,15 +82,15 @@
                 v-bind:flag_image="country.image_src" v-bind:country_name="country.name" v-bind:title="country.name">
             </country-component>
 
+            <!-- Pre-search message (with enter/leave transition) -->
             <transition name="slide-fade">
+                <!-- Render only if the "isSearchConducted" Boolean variable is "true" -->
                 <div id="pre_search_message" v-if="isSearchConducted">
                     {{preSearchMessage}}
                 </div>
             </transition>
 
         </div>
-
-
 
     </div>
 
@@ -102,6 +104,8 @@
 
 </body>
 
+
+<!-- Script to implement automatic focus on an input element upon the loading of the page -->
 <script>
     // Custom Directive "v-focus"
     // To focus the cursor onto the Search input element

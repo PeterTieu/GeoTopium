@@ -1,6 +1,11 @@
+// ABOUT:
+//  JavaScript file for the Search page
+// DESCRIPTION:
+//  Manages the operations and interactivities of the Search page
+
 // ================== Section: Navigation Bar ===================================
 
-//Vue object: Page Title
+//Vue object: Nav
 var app = new Vue({
     el: '#nav',
     data: {
@@ -16,7 +21,7 @@ var app = new Vue({
 
 // ================== Section: Footer ===================================
 
-//Vue object: Page Title
+//Vue object: Footer Text
 var app = new Vue({
     el: '#footer_text',
     data: {
@@ -40,7 +45,7 @@ var app = new Vue({
 
 // ================== Container: Page Banner ===================================
 
-//Vue object: Page Title
+//Vue object: Page Banner Container
 var app = new Vue({
     el: '#page_banner_container',
     data: {
@@ -52,7 +57,9 @@ var app = new Vue({
 
 // ================== Array storing Flag Image-Country Name pairs ===================================
 
-// Array containing directory locations of all Flag Images (for the Possible Answers)
+// Array containing the following properties of each Country:
+    // 1: Country Name (name)
+    // 2: Flag Image image source (image_src)
 countries = [
 	{ name: 'Afghanistan', image_src: '../Assets/Flag_Images/Afghanistan.png' },
 	{ name: 'Albania', image_src: "../Assets/Flag_Images/Albania.png" },
@@ -264,7 +271,7 @@ var search = new Vue({
     el: '#search',
 	data: {
 		// Headings
-		searchInputHeading: 'Search Any Country and its Flag',
+		searchInputHeading: 'Search any Country and its Flag',
 
 		// Pre-search Message
 		preSearchMessage: 'No countries have been searched',
@@ -282,10 +289,7 @@ var search = new Vue({
 	// Implement computed property to search for Flag Image-Country Name pairs
 	computed: {
 		filteredList() {
-			// return countries.filter((country) => {
-			// 	return country.name.toLowerCase().includes(this.searchQueryInput.toLowerCase());
-			// });
-
+			// Apply filter to the name property of each object of the "country" array using the inputted text query from the user, "searchQueryInput", and return then return the resulting array.
 			this.searchQueryResults = countries.filter((country) => {
 				return country.name.toLowerCase().includes(this.searchQueryInput.toLowerCase());
 			});
